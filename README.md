@@ -14,8 +14,8 @@ Používej pure html, css a jquery. Pro ikony používej fontawesome.
 Zde je jak vypadá SQL lite schéma databáze:
 xxxxx
 ```
-
-2. AI okno
+2. Autocomplete + cursor TAB
+3. AI okno
     - Ask mode
     - kontext (web, files)
     - Edit mode
@@ -31,7 +31,7 @@ Ukoly:
 - Agent mode ukazat jak on spin uppne webserver
 - Na buggy pouzit web
 
-6. AI commit messages
+4. AI commit messages
 
 Inline code edits
 
