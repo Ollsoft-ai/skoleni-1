@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker (Frontend SQL)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- SQL.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Task Tracker (Frontend SQL)</h1>
+        
+        <div class="form-container">
+            <h2>Přidat nový úkol</h2>
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="title">Název:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Popis:</label>
+                    <textarea id="description" name="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="category-select">Kategorie:</label>
+                    <select id="category-select" name="category">
+                        <option value="">-- Vyberte kategorii --</option>
+                        <!-- Kategorie budou přidány dynamicky -->
+                    </select>
+                </div>
+                <div class="category-manager">
+                    <button type="button" id="manage-categories">Spravovat kategorie</button>
+                </div>
+                <button type="submit" id="add-task">Přidat úkol</button>
+            </form>
+        </div>
+        
+        <div class="db-operations">
+            <button id="save-db">Uložit databázi</button>
+            <button id="load-db">Načíst databázi</button>
+            <input type="file" id="db-file" style="display: none">
+        </div>
+        
+        <div class="sql-console">
+            <h2>SQL Konzole</h2>
+            <div class="form-group">
+                <textarea id="sql-query" placeholder="Zadejte SQL dotaz...">SELECT * FROM tasks;</textarea>
+            </div>
+            <button id="execute-query">Spustit dotaz</button>
+            <div id="query-results">
+                <h3>Výsledky dotazu:</h3>
+                <pre id="results-area"></pre>
+            </div>
+        </div>
+        
+        <div class="tasks-container">
+            <h2>Moje úkoly</h2>
+            <ul id="task-list">
+                <!-- Úkoly budou přidány pomocí jQuery -->
+            </ul>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
